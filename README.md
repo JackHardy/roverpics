@@ -1,77 +1,50 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Mars Rover Image Viewer Web App
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This web application allows users to view images taken by Mars rovers. It retrieves images from the NASA Open APIs and
+provides features such as authentication, CRUD operations for token management, and displaying image information.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and
-creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in
-many web projects, such as:
+Authentication: The app performs an authentication API call to retrieve a token for subsequent requests. The token is
+obtained from a PHP Laravel backend.
+Token Management: CRUD endpoints are provided to manage tokens.
+Retrieve Rover Photos: The app makes API calls to the NASA Open APIs to retrieve photos taken by Mars rovers. It
+displays images taken by the Curiosity, Opportunity, and Spirit rovers.
+Image Display: Images are displayed in a list format, showing the camera name, earth date, and a thumbnail of the image.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache)
-  storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Backend: PHP Laravel for server-side development.
+Frontend: Vue.js for building interactive user interfaces.
+APIs: Utilizes NASA Open APIs to fetch Mars rover images.
+Source Control: Git for version control.
 
-## Learning Laravel
+## Usage
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all
-modern web application frameworks, making it a breeze to get started with the framework.
+Clone the repository from GitHub.
+Install dependencies for both the backend (Laravel) and frontend (Vue.js).
+Set up environment variables, including API keys for the NASA Open APIs.
+Run the migrations and seeder to populate the database with a test user (jack@packchat.com, password).
+Start the server using npm run dev for the frontend and php artisan serve for the backend (or utilise something like
+Laravel Herd).
+Access the application in your web browser.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a
-modern Laravel application from scratch.
+## Authentication
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video
-tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging
-into our comprehensive video library.
+To authenticate and retrieve a token, click the generate token button which will perform an API call to the
+authentication endpoint provided by the backend. The token obtained will then be used for subsequent requests to fetch
+rover images.
 
-## Laravel Sponsors
+## Retrieving Rover Photos
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in
-becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+The app makes API calls to the NASA Open APIs to retrieve photos taken by Mars rovers. It fetches images from the
+/mars-photos/api/v1/rovers/{rover}/photos endpoint.
 
-### Premium Partners
+## Image Display
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Images are displayed in a list format, showing the camera name, earth date, and a thumbnail of the image.
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in
-the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by
-the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell
-via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Note: This readme provides an overview of the Mars Rover Image Viewer Web App and its features. Detailed instructions
+for setup and usage may vary depending on the actual implementation.
